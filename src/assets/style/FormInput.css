@@ -1,0 +1,12 @@
+.formInput{
+  width: fit-content;
+  border: 1px solid black;
+  padding:3px 7px;
+  align-items: center;
+  display: flex;
+}
+
+.formInput input{
+  border: none;
+  outline: none;
+}
