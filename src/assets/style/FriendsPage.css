@@ -1,0 +1,10 @@
+.friends-list, .friend-request{
+    flex-grow: 1;
+}
+
+.display-friends{
+    flex-grow: 1;
+    display: grid;
+    gap:.5rem;
+    flex-wrap: wrap;
+}

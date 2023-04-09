@@ -1,0 +1,22 @@
+.container{
+    display: flex;
+}
+
+.container>:nth-child(1){
+    position: fixed;
+    width: 300px;
+    padding: 10px 10px;
+    display: flex;
+    flex-direction: column;
+    gap:.3rem;
+    overflow: auto;
+    height: calc(100% - 90px);
+    margin-bottom: 10rem;
+}
+
+.container>:nth-child(2){
+    display: flex;
+    margin-left: 330px;
+    flex-grow: 1;
+    height: 100%;
+}

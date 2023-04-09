@@ -1,0 +1,133 @@
+.college{
+    display: flex;
+}
+
+.college-list{
+    position: fixed;
+    width: 300px;
+    padding: 10px 10px;
+    display: flex;
+    flex-direction: column;
+    gap:.3rem;
+    overflow: auto;
+    height: calc(100% - 90px);
+    margin-bottom: 10rem;
+}
+
+.college-list-item{
+    display: flex;
+    align-items: center;
+    gap:1rem;
+    padding:.5rem;
+    background-color: #2c2c2c;
+    border-radius: 10px;
+}
+
+.college-list-item .logo img{
+    width: 40px;
+}
+
+.college-list-item .detail{
+    display: flex;
+    flex-direction: column;
+}
+
+.college-list-item .detail>h3 {
+    line-height: 0px;
+    margin-bottom: 10px;
+}
+
+.college-list-item .detail .text{
+    font-size: 13px;
+    color: #807d7d;
+}
+
+.college-list-item .info{
+    gap:.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.enrollment{
+    width: 300px;
+}
+
+.college-detail{
+    flex-grow: 1;
+    margin-left: 1rem;
+}
+
+.college-detail .about{
+    gap: 2rem;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    padding:2rem;
+    border-bottom: 2px solid white;
+}
+
+.college-detail .about .info{
+    display: flex;
+    flex-direction: column;
+}
+
+.college-detail .about .info *{
+    color: #8c8989;
+    font-size: 15px;
+}
+
+.college-detail .about .info h2{
+    font-size: 25px;
+    color: white;
+    margin-bottom: 0px;
+}
+
+.college-detail .about .contact-container{
+    display: flex;
+}
+
+.college-detail .about .contact{
+    display: flex;
+    flex-direction: column;
+}
+
+.college-detail{
+    /*max-height: 500px;*/
+    /*overflow: auto;*/
+    /*max-height: calc(100vh - 80px);*/
+}
+
+.right{
+    display: flex;
+    margin-left: 330px;
+    flex-grow: 1;
+    position: relative;
+}
+
+.enrollment{
+    min-width: 350px;
+    position: fixed;
+    margin-top: 20px;
+    box-shadow: 1px 1px 2px 1px #313131;
+    background-color: #313131;
+    max-height: 500px;
+    overflow: auto;
+    padding:10px;
+    display: flex;
+    flex-direction: column;
+    gap:.75rem;
+}
+
+.enrollment-item{
+    border-bottom: 1px solid #404040;
+    padding-bottom: 1rem;
+    padding-left: 10px;
+}
+
+.enrollment-item .buttons{
+    display: flex;
+    flex-grow: 1;
+    gap:.5rem;
+}
+

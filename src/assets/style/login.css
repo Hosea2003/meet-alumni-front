@@ -1,0 +1,58 @@
+.login-page{
+    max-height: 100vh;
+    padding-top: 7rem;
+}
+
+.login-page .wrapper{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap:1rem;
+}
+
+.little-message .title{
+    font-size: 3rem;
+    margin-bottom: -.5rem;
+}
+
+.login-form{
+    padding:10px 20px;
+    box-shadow:1px 2px 3px 1px #252424;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    border-radius: 7px;
+    gap:.7rem;
+    text-align: center;
+    background-color: #313131;
+}
+
+/*.login-form input{*/
+/*    border-radius: 7px;*/
+/*    padding:7px;*/
+/*    border:1px solid #d3d3d3;*/
+/*    outline:none;*/
+/*    font-size: 15px;*/
+/*    background-color: #313131;*/
+/*}*/
+.login-form .loginBtn{
+    padding: 10px;
+    font-size: 15px;
+    border:none;
+    background-color: #3a81fa;
+    color: white;
+    border-radius: 7px;
+    cursor:pointer;
+}
+
+.login-page .footer{
+    margin-top: 1rem;
+    font-size: 15px;
+}
+
+.login-page .create-account{
+    text-decoration: none;
+    font-weight: bold;
+}

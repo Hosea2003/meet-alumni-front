@@ -1,0 +1,16 @@
+.primaryBtn{
+    background: linear-gradient(to left, #B72198, #9A12B7);
+    outline: none;
+    border: none;
+    padding:10px 15px;
+    border-radius: 7px;
+    cursor:pointer;
+}
+
+.primaryBtn:hover{
+    background: linear-gradient(to left, #ce2cad, #bb1edc, #ad108d);
+}
+
+button.primaryBtn[disabled]{
+    background-color: #c576b5;
+}

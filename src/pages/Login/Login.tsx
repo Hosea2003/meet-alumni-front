@@ -2,6 +2,9 @@ import React, {useContext} from "react";
 import {Link} from "react-router-dom";
 import "../../assets/style/login.css"
 import AuthContext from "../../context/AuthContext";
+import PrimaryButton from "../../components/PrimaryButton";
+import FormInput from "../../components/FormInput";
+import PasswordInput from "../../components/PasswordInput";
 
 function Login(){
 
@@ -28,13 +31,9 @@ function Login(){
                 </div>
                 <form action="" className="login-form" onSubmit={handleSubmit}>
                     <h3 className="welcome">Welcome back</h3>
-                    <input type="email" name="email" id="email" className="form-input"
-                           placeholder={"Email"}
-                    />
-                    <input type="password" name="password" id="password" className={"form-input"}
-                           placeholder={"Password"}
-                    />
-                    <button className={"loginBtn"}>Log in</button>
+                    <FormInput placeholder={"Email"} name={"email"}/>
+                    <PasswordInput placeholder={"Password"} name={"password"}/>
+                    <PrimaryButton>Log in</PrimaryButton>
                     <div className="footer">
                         <span>Don't have account? <Link to={'/register'} className={"create-account"}>Create one</Link></span>
                     </div>

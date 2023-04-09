@@ -1,0 +1,19 @@
+.image-btn{
+    background-color: #404040;
+    border:none;
+    border-radius:50%;
+    cursor:pointer;
+    width: 45px;
+    height: 45px;
+    align-items: center;
+    padding: 5px;
+}
+
+.image-btn img{
+    width: 25px;
+    height: 25px;
+}
+
+.image-btn:hover{
+    background-color: #575656;
+}

@@ -1,0 +1,51 @@
+.radio-group{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.label-text{
+    color: #807d7d;
+    display: flex;
+}
+
+.option{
+    display: flex;
+    align-items: center;
+    gap:1rem;
+    cursor: pointer;
+    transition: all 300ms ease-in-out;
+    border-radius: 5px;
+    padding:5px 10px;
+    font-weight: 400;
+    box-shadow:0 1px 1px 1px #3f3f3f;
+}
+
+.option:hover{
+    box-shadow:0 1px 1px 1px #807d7d;
+}
+
+.option.selected{
+    background: linear-gradient(to left, #ce2cad, #B72198);
+}
+
+.option .round{
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+}
+
+
+.option.selected .round{
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background-color: #fdb8ef;
+    border: 2px solid #f647d3;
+}
+
+.options{
+    display: flex;
+    gap:1rem;
+}

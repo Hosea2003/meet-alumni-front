@@ -1,0 +1,18 @@
+.friend-link{
+    background: transparent;
+    text-align: left;
+    display: flex;
+    gap:1rem;
+    align-items: center;
+    font-size: 15px;
+    flex-grow: 1;
+}
+
+.friend-link.selected,
+.friend-link:hover{
+    background: #404040;
+}
+
+.friend-link img{
+    width: 30px;
+}

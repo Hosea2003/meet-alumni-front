@@ -1,0 +1,29 @@
+.navbar{
+    display:flex;
+    justify-content: space-between;
+    padding: 10px;
+    align-items: center;
+    background-color: #2c2c2c;
+    max-height: 50px;
+    z-index: 3;
+    position:relative;
+}
+
+.navbar .buttons{
+    display: flex;
+    align-items: center;
+    gap:.5rem;
+}
+
+.navbar .profile{
+    display: flex;
+    text-decoration: none;
+    align-items: center;
+    gap:.75rem;
+}
+
+.navbar .profile img{
+    width:50px;
+    height: 50px;
+    border-radius: 50%;
+}

@@ -1,14 +1,24 @@
 import React, {useContext} from "react";
-import {Navigate} from "react-router-dom";
+import {Navigate, Outlet} from "react-router-dom";
 import AuthContext from "../context/AuthContext";
+import Navbar from "../components/Navbar";
+
+function PrivateRoute():React.ReactElement{
+    const {refreshTokenExpired} =useContext(AuthContext);
+
+    // if(!user)return <Navigate to={{pathname:"/login"}}/>
+    //
+    // return children
 
 
-function PrivateRoute({element, children, ...rest}:any){
-    const {user} =useContext(AuthContext);
-
-    if(!user)return <Navigate to={{pathname:"/login"}}/>
-
-    return children
+    return !refreshTokenExpired()?
+        <div className={"private-route-container"}>
+            <div className="header">
+                <Navbar/>
+            </div>
+            <Outlet/>
+        </div>:
+        <Navigate to={"/login"}/>
 }
 
 export default PrivateRoute

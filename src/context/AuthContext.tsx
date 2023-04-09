@@ -1,8 +1,13 @@
 import React, {createContext, useState, useEffect, FormEvent} from 'react'
 import {User} from "../models/user";
-import {Tokens} from "../models/tokens";
+import {AccessTokens, RefreshTokens, Tokens} from "../models/tokens";
 import jwtDecode from "jwt-decode";
 import {useNavigate} from 'react-router-dom'
+import axios from "axios";
+import dayjs from "dayjs";
+import axiosInstance from "../utils/AxiosInstance";
+import {BACK_BASE_URL} from "../data/data";
+
 
 const AuthContext=createContext<any>({})
 
@@ -21,76 +26,72 @@ export const AuthProvider =({children}:any)=>{
     {
         return defaultTokens?JSON.parse(defaultTokens) as Tokens:null
     })
-    const [user, setUser]=useState<User|undefined|null>(()=>{
-        return defaultTokens?jwtDecode(JSON.parse(defaultTokens).access):null
+    const [user, setUser]=useState<User|null|undefined>(()=>{
+        const tokens= defaultTokens?JSON.parse(defaultTokens) as Tokens:null
+        return tokens?jwtDecode(tokens.access) as User:null
     })
 
-    const [loading, setLoading]=useState(true)
+    // const [loading, setLoading]=useState(true)
     const navigate=useNavigate()
-
-    useEffect(()=>{
-
-        const fourMinutes=1000*60*4
-
-        let interval=setInterval(async ()=>{
-            if(authTokens)await updateTokens()
-        }, fourMinutes)
-        return ()=>clearInterval(interval)
-    }, [authTokens, loading])
 
     const loginUser=async ({email, password}:loginInput)=>{
 
-        const response = fetch("http://localhost:8000/api/token/",{
-            method:"POST",
-            headers:{
-                "Content-Type":"application/json"
-            },
-            body:JSON.stringify({email:email, password:password})
-        }).then(response=>{
-            if(response.status===200){
-                const data=response.json() as unknown as Tokens
-                return data
+        try{
+            const {data, status}=await axios.post<Tokens>(
+                "http://localhost:8000/api/token/",
+                {
+                    email:email, password:password
+                },
+                {
+                    headers:{
+                        'Content-Type':'application/json',
+                        Accept:'application/json'
+                    }
+                }
+            )
+
+            if(status===200){
+                setAuthTokens(data)
+                localStorage.setItem("authTokens", JSON.stringify(data))
+                localStorage.setItem("current_timestamp", Date.now().toString())
+                const user = jwtDecode(data.access) as User
+                setUser(user)
+                navigate("/")
             }
-            else{
-            //     show something else
+
+        }catch (error:any){
+            if(axios.isAxiosError(error)){
+                console.log(error.message)
             }
-        }).then(tokens =>{
-            localStorage.setItem("authTokens", JSON.stringify(tokens))
-            setAuthTokens(tokens)
-            if (tokens?.access != null) {
-                const access=jwtDecode(tokens?.access) as User
-                setUser(access)
-            }
-            navigate("/")
-        })
+        }
+
     }
 
-    const updateTokens= async()=>{
-        fetch("http://localhost:8000/api/token/refresh/",{
-            method:"POST",
-            headers:{
-                "Content-Type":"application/json"
-            },
-            body:JSON.stringify({refresh:authTokens?.refresh})
-        }).then(response=>{
-            if(response.status===401){
-            //     Unauthorized
-                setUser(null)
-                setAuthTokens(null)
-                navigate('/login')
-            }
-            else{
-                const tokens = response.json() as unknown as Tokens
-                return tokens
-            }
-        }).then(tokens=>{
-            setAuthTokens(tokens)
-        })
+    const logOut=()=>{
+        setUser(null)
+        setAuthTokens(null)
+        localStorage.removeItem("current_timestamp")
+        navigate("/login")
+    }
+
+    const refreshTokenExpired=():boolean=>{
+
+        if(!authTokens)return true
+
+        const refreshToken=jwtDecode(authTokens.refresh) as RefreshTokens
+        const isExpired = dayjs.unix(refreshToken.exp).diff(dayjs()) <1
+
+        return isExpired
     }
 
     const authContextData={
         loginUser:loginUser,
-        user:user
+        user:user,
+        setUser:setUser,
+        authTokens:authTokens,
+        setAuthTokens:setAuthTokens,
+        refreshTokenExpired,
+        logOut
     }
 
     return (

@@ -1,0 +1,66 @@
+.user-request-item{
+    display: flex;
+    flex-direction: column;
+    padding: .75rem 1rem;
+    background-color: #404040;
+    border-radius: 10px;
+}
+
+.user-request-item .info{
+    display: flex;
+    align-items: center;
+    gap:2rem;
+}
+
+.user-request-item .info img{
+    width: 70px;
+    border-radius: 50%;
+    height: 70px;
+}
+
+.user-request-item .info .details{
+    display: flex;
+    flex-direction: column;
+    width:available;
+    flex-grow: 1;
+}
+
+.user-request-item .info .head{
+    line-height: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.user-request-item .info .head .date-request{
+    font-size: 13px;
+    color: #8d8b8b;
+}
+
+.user-request-item .result-text{
+    margin-top: 7px;
+    background-color: #4f4e4e;
+    height: 35px;
+    text-align: center;
+    line-height: 35px;
+    border-radius: 9px;
+    color: #888686;
+}
+
+.user-request-item .actions{
+    display: flex;
+    align-items: center;
+    gap:5px;
+    margin-top: 7px;
+}
+
+.user-request-item .actions .accept-btn{
+    flex-grow: 1;
+    height: 35px;
+}
+
+.user-request-item .actions .request-bin{
+    background-color: #807d7d;
+    border-radius: 5px;
+    height: 35px;
+}

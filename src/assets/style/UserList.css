@@ -1,0 +1,65 @@
+.user-list{
+    border-right: 1px solid #575757;
+}
+
+#message-left-side{
+    overflow: hidden;
+    padding: 0;
+}
+
+.user-list >div{
+    padding:.5rem;
+}
+
+#message-left-side .list{
+    overflow: auto;
+}
+
+.user-list .user-list-header{
+    height: 60px;
+    padding: 0 1rem;
+}
+
+.user-list-header h1{
+    margin: 0;
+}
+
+.user-list-item{
+    display: flex;
+    padding:.1rem;
+    align-items: center;
+    gap:5px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.user-list-item img{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+
+.user-list-item .text .name{
+    font-size: 16px;
+}
+
+.user-list-item .text .message-detail{
+    font-size: 13px;
+    display: flex;
+}
+
+.user-list-item .text .message-detail span{
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 160px;
+}
+
+.user-list-item.active,.user-list-item.active:hover{
+    background: linear-gradient(to left, #623457, #51175e);
+}
+
+.user-list-item:hover{
+    background: #404040;
+}

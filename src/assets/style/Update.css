@@ -1,0 +1,65 @@
+.change-picture{
+    text-align: center;
+}
+
+.change-picture .image-container{
+    background:linear-gradient(to left, #ce2cad, #9A12B7);
+    display: flex;
+    justify-content: center;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    align-items: center;
+    margin: 0 auto;
+    padding: 5px;
+}
+
+#image-file{
+    display: none;
+}
+
+.change-picture .image-border{
+    position: relative;
+    background-color: #2c2c2c;
+    border-radius: 50%;
+    width: calc(100% - 5px);
+    padding: 5px;
+    height: calc(100% - 7px);
+}
+
+.change-picture-btn{
+    margin-top: 1rem;
+}
+
+.image-container .profile-picture{
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+}
+
+.image-file-label{
+    cursor: pointer;
+    position: absolute;
+    bottom: 10px;
+    right: 0;
+    background-color: #404040;
+    padding: 7px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-file-label img{
+    width: 30px;
+    height: 30px;
+}
+
+.personal-info{
+    display: flex;
+    flex-direction: column;
+    gap:1rem;
+    margin-top: 1rem;
+}

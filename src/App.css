@@ -1,0 +1,10 @@
+.header{
+    position: fixed;
+    top:0;
+    width: 100%;
+    z-index: 0;
+}
+
+.private-route-container{
+    margin: 75px 0;
+}

@@ -1,0 +1,63 @@
+.user-card{
+    padding:1rem;
+    background-color: #2c2c2c;
+    width: fit-content;
+    text-align: center;
+    border-radius: 10px;
+    min-width: 160px;
+    flex-grow: 1;
+    max-width: 180px;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+}
+
+.picture-container{
+    padding:2rem;
+}
+
+.border{
+    border-radius: 50%;
+    background: linear-gradient(to left, #f529cb, #B72198, #9A12B7);
+    width: 100px;
+    height: 100px;
+    padding: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.same-color{
+    background-color: #2c2c2c;
+    border-radius: 50%;
+    padding: 3px;
+    display: flex;
+    width: fit-content;
+    height: fit-content;
+    justify-content: center;
+    align-items: center;
+}
+
+.same-color img{
+    border-radius: 50%;
+    width: 95px;
+    height: 95px;
+}
+
+.user-card .name{
+    margin-bottom: 0;
+    margin-top: 0;
+    font-size: 20px;
+}
+
+.user-card .buttons{
+    display: flex;
+    flex-direction: column;
+    gap:5px;
+    margin-top: 5px;
+}
+.user-card .buttons .view-profile{
+    background: #404040;
+    color: #8d8b8b;
+}
+

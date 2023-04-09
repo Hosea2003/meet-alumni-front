@@ -1,0 +1,14 @@
+.tab{
+    display: flex;
+    flex-direction: row;
+}
+
+.tab-item{
+    text-decoration: none;
+    padding:.5rem 1.5rem;
+}
+
+.tab-item.active{
+    border-bottom: 3px solid #ce2cad;
+    transition: all .3s ease-in-out;
+}

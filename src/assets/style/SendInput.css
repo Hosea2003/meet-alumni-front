@@ -1,0 +1,22 @@
+.send-input{
+    border-radius: 100vh;
+    display: flex;
+    padding:7px 0px 7px 7px;
+    background-color: #404040;
+}
+
+.send-input input{
+    background-color: transparent;
+    border:none;
+    outline: none;
+    flex-grow: 1;
+}
+
+.send-button{
+    background-color: transparent;
+    border: none;
+}
+
+.send-button img{
+    width: 23px;
+}

@@ -1,0 +1,14 @@
+.user-request .wrapper{
+    max-width: 500px;
+    margin: 0rem auto;
+    gap:1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.wrapper .requests{
+    display: flex;
+    flex-direction: column;
+    gap:1rem;
+}
+

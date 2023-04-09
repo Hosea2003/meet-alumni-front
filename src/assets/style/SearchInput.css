@@ -1,0 +1,16 @@
+.search-input{
+    background-color: #404040;
+    padding:10px;
+    display: flex;
+    align-items: center;
+    border-radius: 100vh;
+    gap:10px
+}
+
+.search-input input{
+    border:none;
+    outline: none;
+    background-color: transparent;
+    font-size: 15px;
+    color: #807d7d;
+}

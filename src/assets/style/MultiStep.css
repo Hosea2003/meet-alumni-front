@@ -1,0 +1,55 @@
+.progressbar{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    gap:1rem;
+}
+
+.progress-number{
+    display: flex;
+    flex-direction: column;
+}
+
+.progress-number .step{
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 50%;
+    font-size: 23px;
+    border:1px solid #ce2cad;
+    z-index: 1;
+}
+
+.progress-number .step.active{
+    background: linear-gradient(to left, #B72198, #9A12B7);
+    border: 1px solid transparent;
+}
+
+.multistep-form{
+    display: flex;
+    flex-direction: column;
+    gap:1.5rem;
+}
+
+.multistep-form .form-container{
+    height: 100%;
+}
+
+.multistep-form .body{
+    height: 100%;
+}
+
+/*.multistep-form .footer{*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    gap:2rem;*/
+/*}*/
+
+/*.multistep-btn.hide{*/
+/*    display: none;*/
+/*}*/
+
+/*.multistep-btn:disabled{*/
+/*    background: #ccb5c7;*/
+/*}*/

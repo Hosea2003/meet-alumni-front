@@ -6,5 +6,19 @@ export interface User{
     contact:string,
     address:string,
     isAdminCollege:boolean,
-    gender:boolean
+    gender:boolean,
+    exp:number,
+    iat:number
+    id:number
+    profile_picture:string
+}
+
+export interface PublicUser{
+    id:number
+    name:string
+    mutual_friends:number
+    profile_picture:string
+    is_friend:boolean,
+    has_requested:boolean
+    have_requested:boolean
 }
